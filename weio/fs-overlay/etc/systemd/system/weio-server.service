@@ -1,0 +1,9 @@
+[Unit]
+Description=WeIO Server
+After=syslog.target network.target
+
+[Service]
+ExecStart=/usr/bin/python /weio/weioServer.py
+
+[Install]
+WantedBy=multi-user.target

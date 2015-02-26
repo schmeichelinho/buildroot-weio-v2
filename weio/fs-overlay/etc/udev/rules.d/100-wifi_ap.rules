@@ -1,0 +1,2 @@
+SUBSYSTEM=="net",ACTION=="add",KERNEL=="wlan0",RUN+="/sbin/ifconfig wlan0 10.0.0.1 netmask 255.255.255.0",RUN+="/bin/systemctl start wifi_ap.service",RUN+="/bin/systemctl start dhcpd-wlan.service"
+SUBSYSTEM=="net",ACTION=="remove",KERNEL=="wlan0",RUN+="/bin/systemctl stop wifi_ap.service",RUN+="/bin/systemctl stop dhcpd-wlan.service"
